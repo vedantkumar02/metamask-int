@@ -21,7 +21,9 @@ export const DiscoverWalletProviders = () => {
   const [selectedChain, setSelectedChain] = useState(chains[0].id);
 
   const handleConnect = async () => {
-    if (!window.ethereum) {
+    const isMetaMaskInstalled = window.ethereum && window.ethereum.isMetaMask;
+
+    if (!isMetaMaskInstalled) {
       alert("MetaMask is not installed");
       return;
     }
