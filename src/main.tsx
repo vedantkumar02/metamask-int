@@ -1,10 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { Toaster } from "react-hot-toast";
+import "./index.css";
+import { MetaMaskConnect } from "./app";
+import { ThemeProvider } from "./context/theme";
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <ThemeProvider defaultTheme="dark">
+      <MetaMaskConnect />
+    </ThemeProvider>
+    <Toaster
+      position="top-right"
+      reverseOrder
+      toastOptions={{
+        style: {
+          fontSize: "14px",
+        },
+      }}
+    />
+  </StrictMode>
+);

@@ -1,8 +1,6 @@
-import "./App.css";
-import { DiscoverWalletProviders } from "./components/DiscoverWalletProviders";
+import React from "react";
+import { WalletConnect } from "./components";
 
-function App() {
-  return <DiscoverWalletProviders />;
-}
-
-export default App;
+export const MetaMaskConnect: React.FC = () => {
+  return <WalletConnect />;
+};
